@@ -1,24 +1,42 @@
-# README
+# Overview:
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A tutorial based app to demonstrate Rails with JQuery functionality
 
-Things you may want to cover:
+JQuery added through yarn install for Rails 6.0.2.2 used in this repo.
+Instructions followed as explained in this website:
+https://www.botreetechnologies.com/blog/introducing-jquery-in-rails-6-using-webpacker
 
-* Ruby version
+### Version used:
+* Ruby version -> 2.6.5p114
 
-* System dependencies
+* Database creation -> created through hard coding in seeds.db
 
-* Configuration
+## Resources: 
+https://www.botreetechnologies.com/blog/introducing-jquery-in-rails-6-using-webpacker
 
-* Database creation
+and this awesome tutorial that just walks you through the whole thing, easily:
 
-* Database initialization
+https://blog.engineyard.com/using-jquery-with-rails-how-to
 
-* How to run the test suite
+### Errata:
+There is an error in the engineyard tutorial (small oversight).  The code below:
 
-* Services (job queues, cache servers, search engines, etc.)
+```
+$(document).ready(function() {
+  $('[data-js-hide-link]').click(function(event){
+    alert('You clicked the Hide link');
+    event.preventDefault(); 
+  });
+}
+```
 
-* Deployment instructions
+misses an end parantheses ) and doesn't work. Please use this instead:
 
-* ...
+```
+$(document).ready(function() {
+  $('[data-js-hide-link]').click(function(event){
+    alert('You clicked the Hide link');
+    event.preventDefault(); 
+  });
+});
+```
